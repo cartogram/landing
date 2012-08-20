@@ -1,12 +1,6 @@
 <?php
 /**
  * Template Name: Single
- *
- * @package 	WordPress
- * @subpackage 	Starkers
- * @since 		Starkers 4.0
- *
- * Please see /external/starkers-utilities.php for info on get_template_parts()
  */
 ?>
 <?php get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>

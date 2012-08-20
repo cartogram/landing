@@ -25,7 +25,7 @@
 	<h2><?php comments_number(); ?></h2>
 
 	<ol>
-		<?php wp_list_comments( array( 'callback' => 'starkers_comment' ) ); ?>
+		<?php wp_list_comments( array( 'callback' => 'cartogram_comment' ) ); ?>
 	</ol>
 
 	<?php
