@@ -2,9 +2,6 @@
 /**
  * Template Name: Comments
  *
- * @package 	WordPress
- * @subpackage 	Starkers
- * @since 		Starkers 4.0
  */
 ?>
 <div id="comments">
