@@ -1,20 +1,9 @@
-A First Level Header
-====================
+Landing Theme Framework
+=======================
 
-A Second Level Header
----------------------
+Landing is a wordpress theme framework created for internal use at [Cartogram](https://www.studiocartogram.com).
 
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
+### Features
 
-The quick brown fox jumped over the lazy
-dog's back.
-
-### Header 3
-
-> This is a blockquote.
-> 
-> This is the second paragraph in the blockquote.
->
-> ## This is an H2 in a blockquote
+* Runs Compass and Sass from Zurb's Foundation
+* More to come!
