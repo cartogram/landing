@@ -14,6 +14,7 @@
 	require_once( 'external/metaboxes.php' );
 	require_once( 'external/comments.php' );
 	require_once( 'external/theme_options.php' );
+	require_once( 'external/gravity_forms.php' );
 
 	/* ========================================================================================================================
 	
@@ -137,5 +138,12 @@
 	 **/
 	add_action( 'admin_menu', 'cartogram_admin_menu' ); 
 	add_action( 'init', 'cartogram_admin_assets' );	
+
+	/**
+	 * Gravity Forms
+	 *
+	 **/
+	add_filter("gform_submit_button", "form_submit_button", 10, 2);
+
 
 ?>
