@@ -14,8 +14,8 @@
 	    	"type" => "checkbox",
 			"name" => $prefix."in_home_slideshow",
 	    	"std" => "",
-	    	"title" => __('Include in Home Page Slideshow','themetrust'),
-	    	"description" => __('Display this in the home page slideshow.','themetrust'))	
+	    	"title" => __('Include in Home Page Slideshow','cartogram'),
+	    	"description" => __('Display this in the home page slideshow.','cartogram'))	
 	);
 
 
@@ -24,30 +24,30 @@
 	    	"type" => "checkbox",
 			"name" => $prefix."on_hompage",
 	    	"std" => "",
-	    	"title" => __('Homepage Bottom','themetrust'),
-	    	"description" => __('Display on the Homepage.','themetrust')),
+	    	"title" => __('Homepage Bottom','cartogram'),
+	    	"description" => __('Display on the Homepage.','cartogram')),
 
 			"tagline" => array(
 	    	"type" => "textfield",
 			"name" => $prefix."tagline",
 	    	"std" => "",
-	    	"title" => __('Tagline','themetrust'),
-	    	"description" => __('Enter the tagline of this product.','themetrust')),
+	    	"title" => __('Tagline','cartogram'),
+	    	"description" => __('Enter the tagline of this product.','cartogram')),
 
 	    	"in_clearance" => array(
 	    	"type" => "checkbox",
 			"name" => $prefix."in_clearance",
 	    	"std" => "",
-	    	"title" => __('Clearance','themetrust'),
-	    	"description" => __('Display in the Clearance section.','themetrust'))
+	    	"title" => __('Clearance','cartogram'),
+	    	"description" => __('Display in the Clearance section.','cartogram'))
 	);
 	$database_options = array(
 	    	"architonic_source" => array(
 	    	"type" => "textfield",
 			"name" => $prefix."architonic_source",
 	    	"std" => "",
-	    	"title" => __('Architonic Source','themetrust'),
-	    	"description" => __('Paste the Architonic Source into the field above.','themetrust'))
+	    	"title" => __('Architonic Source','cartogram'),
+	    	"description" => __('Paste the Architonic Source into the field above.','cartogram'))
 	);
 
 
@@ -106,9 +106,9 @@
 		global $home_slideshow_options, $product_options, $database_options;	
 		
 		if ( function_exists('add_meta_box') ) {				
-			add_meta_box( 'new-meta-boxes-home-slideshow', __('Home Slideshow Options','themetrust'), 'new_meta_box', 'products', 'normal', 'high', array('inputs'=>$home_slideshow_options) );
-			add_meta_box( 'new-meta-boxes-video', __('Product Options','themetrust'), 'new_meta_box', 'products', 'normal', 'high', array('inputs'=>$product_options) );
-			add_meta_box( 'new-meta-boxes-video', __('Architonic Options','themetrust'), 'new_meta_box', 'page', 'normal', 'high', array('inputs'=>$database_options) );
+			add_meta_box( 'new-meta-boxes-home-slideshow', __('Home Slideshow Options','cartogram'), 'new_meta_box', 'products', 'normal', 'high', array('inputs'=>$home_slideshow_options) );
+			add_meta_box( 'new-meta-boxes-video', __('Product Options','cartogram'), 'new_meta_box', 'products', 'normal', 'high', array('inputs'=>$product_options) );
+			add_meta_box( 'new-meta-boxes-video', __('Architonic Options','cartogram'), 'new_meta_box', 'page', 'normal', 'high', array('inputs'=>$database_options) );
 
 		}
 	}

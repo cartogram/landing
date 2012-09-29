@@ -53,7 +53,7 @@ $cartogram_theme_name = "landmark";
 register_sidebar(array(
 	'name' => 'Sidebar',
 	'id' => 'sidebar',
-	'description' => __('This is the default widget area for the sidebar. This will be displayed if the other sidebars have not been populated with widgets.', 'themetrust'),
+	'description' => __('This is the default widget area for the sidebar. This will be displayed if the other sidebars have not been populated with widgets.', 'cartogram'),
 	'before_widget' => '<div id="%1$s" class="oneFourth %2$s sidebarBox widgetBox">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3>',
@@ -63,7 +63,7 @@ register_sidebar(array(
 register_sidebar(array(
 	'name' => 'Page Sidebar',
 	'id' => 'sidebar_pages',
-	'description' => __('Widget area for the sidebar on pages.', 'themetrust'),
+	'description' => __('Widget area for the sidebar on pages.', 'cartogram'),
 	'before_widget' => '<div id="%1$s" class="oneFourth %2$s sidebarBox widgetBox">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3>',
@@ -83,8 +83,8 @@ class TTrust_Recent_Posts extends WP_Widget {
 
 	function TTrust_Recent_Posts() {
 		global $cartogram_theme_name, $ttrust_version, $options;
-		$widget_ops = array('classname' => 'ttrust_recent_posts', 'description' => __('Display recent posts from any category.', 'themetrust'));
-		$this->WP_Widget('ttrust_recent_posts', $cartogram_theme_name.' '.__('Recent Posts', 'themetrust'), $widget_ops);
+		$widget_ops = array('classname' => 'ttrust_recent_posts', 'description' => __('Display recent posts from any category.', 'cartogram'));
+		$this->WP_Widget('ttrust_recent_posts', $cartogram_theme_name.' '.__('Recent Posts', 'cartogram'), $widget_ops);
 	}
 
 	function widget($args, $instance) {
@@ -157,19 +157,19 @@ class TTrust_Recent_Posts extends WP_Widget {
 		$pn_categories_obj = get_categories('hide_empty=0');
 		$pn_categories = array(); ?>
 
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'themetrust'); ?></label>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'cartogram'); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
-		<p><label for="<?php echo $this->get_field_id('rp_cat'); ?>"><?php _e('Category', 'themetrust'); ?></label>
+		<p><label for="<?php echo $this->get_field_id('rp_cat'); ?>"><?php _e('Category', 'cartogram'); ?></label>
 		<select class="widefat" id="<?php echo $this->get_field_id('rp_cat'); ?>" name="<?php echo $this->get_field_name('rp_cat'); ?>">
-			<option value=""><?php _e('All', 'themetrust'); ?></option>
+			<option value=""><?php _e('All', 'cartogram'); ?></option>
 			<?php foreach ($pn_categories_obj as $pn_cat) {				
 				echo '<option value="'.$pn_cat->cat_ID.'" '.selected($pn_cat->cat_ID, $rp_cat).'>'.$pn_cat->cat_name.'</option>';
 			} ?>
 		</select></p>	
 
-		<p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'themetrust'); ?></label>
+		<p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'cartogram'); ?></label>
 		<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /><br />
-		<small><?php _e('10 max', 'themetrust'); ?></small></p>
+		<small><?php _e('10 max', 'cartogram'); ?></small></p>
 <?php
 	}
 }
@@ -189,7 +189,7 @@ class TTrust_Twitter extends WP_Widget {
 		global $cartogram_theme_name, $ttrust_version, $options;
 		
         $widget_ops = array('classname' => 'widget_ttrust_twitter', 'description' => 'Display latest tweets.');
-		$this->WP_Widget('ttrust_twitter', $cartogram_theme_name.' '.__('Twitter', 'themetrust'), $widget_ops);
+		$this->WP_Widget('ttrust_twitter', $cartogram_theme_name.' '.__('Twitter', 'cartogram'), $widget_ops);
     
     }
  
@@ -261,21 +261,21 @@ class TTrust_Twitter extends WP_Widget {
 ?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'themetrust'); ?>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'cartogram'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 			</label>
 		</p>		
 		<p>
-			<label for="<?php echo $this->get_field_id('user'); ?>"><?php _e('Username:', 'themetrust'); ?>
+			<label for="<?php echo $this->get_field_id('user'); ?>"><?php _e('Username:', 'cartogram'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('user'); ?>" name="<?php echo $this->get_field_name('user'); ?>" type="text" value="<?php echo esc_attr($user); ?>" />
 			</label>
 		</p>		
 		<p>
-			<label for="<?php echo $this->get_field_id('twitter_count'); ?>"><?php _e('Number of tweets:', 'themetrust'); ?></label>
+			<label for="<?php echo $this->get_field_id('twitter_count'); ?>"><?php _e('Number of tweets:', 'cartogram'); ?></label>
 			<input id="<?php echo $this->get_field_id('twitter_count'); ?>" name="<?php echo $this->get_field_name('twitter_count'); ?>" type="text" value="<?php echo $count; ?>" size="3" /><br />
 		</p>		
 		<p>
-			<label for="<?php echo $this->get_field_id('twitter_label'); ?>"><?php _e('Follow Link label:', 'themetrust'); ?>
+			<label for="<?php echo $this->get_field_id('twitter_label'); ?>"><?php _e('Follow Link label:', 'cartogram'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('twitter_label'); ?>" name="<?php echo $this->get_field_name('twitter_label'); ?>" type="text" value="<?php echo esc_attr($label); ?>" />
 			</label>
 		</p>
@@ -298,7 +298,7 @@ class TTrust_Flickr extends WP_Widget {
 	function TTrust_Flickr() {
 		global $cartogram_theme_name, $ttrust_version, $options;
         $widget_ops = array('classname' => 'widget_ttrust_flickr', 'description' => 'Display flickr photos.');
-		$this->WP_Widget('ttrust_flickr', $cartogram_theme_name.' '.__('Flickr', 'themetrust'), $widget_ops);
+		$this->WP_Widget('ttrust_flickr', $cartogram_theme_name.' '.__('Flickr', 'cartogram'), $widget_ops);
     
     }
  
@@ -367,19 +367,19 @@ class TTrust_Flickr extends WP_Widget {
 ?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'themetrust'); ?>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'cartogram'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 			</label>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('user'); ?>"><?php _e('Flickr ID:', 'themetrust'); ?>
+			<label for="<?php echo $this->get_field_id('user'); ?>"><?php _e('Flickr ID:', 'cartogram'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('user'); ?>" name="<?php echo $this->get_field_name('user'); ?>" type="text" value="<?php echo esc_attr($user); ?>" />
 			</label>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('flickr_nr'); ?>"><?php _e('Number of photos:', 'themetrust'); ?></label>
+			<label for="<?php echo $this->get_field_id('flickr_nr'); ?>"><?php _e('Number of photos:', 'cartogram'); ?></label>
 			<input id="<?php echo $this->get_field_id('flickr_nr'); ?>" name="<?php echo $this->get_field_name('flickr_nr'); ?>" type="text" value="<?php echo $nr; ?>" size="3" /><br />
 			<small><?php _e('(15 max)'); ?></small>
 		</p>
