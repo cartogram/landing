@@ -39,6 +39,9 @@
 	 */
 	function cartogram_scripts() {
         wp_deregister_script('jquery');
+        wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js');
+	    wp_enqueue_script( 'jquery' );
+        
 
 		wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/modernizr.foundation.js', NULL, NULL, NULL);
 		wp_enqueue_script( 'modernizr' );

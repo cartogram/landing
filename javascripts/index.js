@@ -1,5 +1,4 @@
 /*
-@codekit-prepend "foundation/jquery.js"
 @codekit-prepend "foundation/jquery.placeholder.js"
 @codekit-prepend "foundation/jquery.foundation.alerts.js"
 @codekit-prepend "foundation/jquery.foundation.accordion.js"
