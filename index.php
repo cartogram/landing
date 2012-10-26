@@ -3,6 +3,9 @@
  * Template Name: Home
  */
 ?>
-<?php get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+
+<?php get_template_part('parts/shared/html-header'); ?>
+<?php get_header() ?> 
 <?php get_template_part('parts/loop'); ?>
-<?php get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer') ); ?>
+<?php get_footer() ?>
+<?php get_template_part('parts/shared/html-footer'); ?>

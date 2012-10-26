@@ -3,8 +3,8 @@
  * Template Name: Single
  */
 ?>
-<?php get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
-
+<?php get_template_part('parts/shared/html-header'); ?>
+<?php get_header() ?> 
 <section class="container">
 	<div class="row">
 		<div class="columns twelve">
@@ -24,4 +24,5 @@
 		</div>
 	</div>	
 </section>
-<?php get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
+<?php get_footer() ?>
+<?php get_template_part('parts/shared/html-footer'); ?>
