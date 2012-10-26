@@ -6,6 +6,7 @@
 
 <?php get_template_part('parts/shared/html-header'); ?>
 <?php get_header() ?> 
+<<<<<<< HEAD
 <div class="row">
             <div class="twelve columns">
               <nav class="top-bar">
@@ -85,6 +86,8 @@
                 </section></nav>
             </div>
           </div>
+=======
+>>>>>>> e8f8d81eea5845b39a470a862fd8d736119990da
 <?php get_template_part('parts/loop'); ?>
 <?php get_footer() ?>
 <?php get_template_part('parts/shared/html-footer'); ?>
