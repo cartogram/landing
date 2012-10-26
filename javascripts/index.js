@@ -7,10 +7,13 @@
 @codekit-prepend "foundation/jquery.foundation.forms.js"
 @codekit-prepend "foundation/jquery.foundation.tabs.js"
 @codekit-prepend "foundation/jquery.foundation.navigation.js"
+@codekit-prepend "foundation/jquery.foundation.topbar.js"
 @codekit-prepend "foundation/jquery.foundation.reveal.js"
 @codekit-prepend "foundation/jquery.foundation.orbit.js"
+@codekit-prepend "foundation/jquery.foundation.mediaQueryToggle.js"
 @codekit-prepend "foundation/app.js"
 @codekit-prepend "client/jquery.isotope.js"
 @codekit-prepend "client/jquery.flexslider.js"
+@codekit-prepend "client/jquery.twitter.js"
 @codekit-prepend "client/app.js"
 */

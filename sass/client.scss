@@ -1,15 +1,22 @@
-@charset "UTF-8";
+@import "compass/css3";
 
-// Foundation Features
-// =============
+@import "modular-scale";
+
+@import "client/functions/all";
 
 @import "client/settings";
+
+@import "client/mixins/all";
 
 @import "client/common/base";
 
 @import "client/components/grid", "client/components/modules/all";
 
-// Fonts
-// =============
+@import "client/components/modules/mqueries";
+
+@import "client/thumbnails";
+
+@import "client/flexslider";
+
 @import "client/fonts/font";
 

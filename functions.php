@@ -23,8 +23,9 @@
 	======================================================================================================================== */
 
 	register_nav_menus( array(
+		'top' => 'Top Navigation Menu',
 		'main' => 'Main Navigation Menu',
-		'footer' => 'Footer Navigation Menu'
+		'footer' => 'Footer Navigation Menu',
 	) );
 
 	/* ========================================================================================================================
@@ -41,13 +42,13 @@
         wp_deregister_script('jquery');
         wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js');
 	    wp_enqueue_script( 'jquery' );
-        
 
-		wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/modernizr.foundation.js', NULL, NULL, NULL);
+
+		wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/modernizr.cartogram.js', NULL, NULL, NULL);
 		wp_enqueue_script( 'modernizr' );
 
-		wp_register_script( 'app', get_template_directory_uri().'/javascripts/index-ck.js', NULL, NULL, NULL );
-		wp_enqueue_script( 'app' );
+		wp_register_script( 'app', get_template_directory_uri().'/javascripts/index-ck.js', array('jquery') );
+		wp_enqueue_script( 'app', array('jquery')  );
 
 		wp_register_style( 'screen', get_template_directory_uri().'/stylesheets/app.css', '', '', 'screen' );
         wp_enqueue_style( 'screen' );
@@ -68,7 +69,7 @@
 	add_image_size('cartogram_post_thumb_big',470, 9000, false);
 	add_image_size('cartogram_post_thumb_big_cropped',470, 340, true);
 
-	add_image_size('cartogram_post_thumb_small', 300, 180, true);
+	add_image_size('cartogram_post_thumb_small', 310, 180, true);
 	add_image_size('cartogram_post_thumb_tiny', 220, 140, true);
 	add_image_size('cartogram_slideshow_image_full', 1000, 444, true);
 
@@ -111,9 +112,9 @@
 	 *
 	 **/
 	add_filter('the_excerpt', 'excerpt_ellipsis');
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	add_filter('the_content', 'cartogram_remove_more_link');
 	add_action('the_content', 'add_video_containers');
-		
 		/**
 		 * Shortcodes
 		 *
@@ -126,7 +127,7 @@
 		 * Other
 		 *
 		 **/	
-		remove_filter('term_description','wpautop');	
+		//remove_filter('term_description','wpautop');	
 
 	/**
 	 * Theme Parts
@@ -147,6 +148,11 @@
 	 *
 	 **/
 	add_filter("gform_submit_button", "form_submit_button", 10, 2);
-
+	
+	/**
+	 * Comments
+	 *
+	 **/
+	add_action('comment_post', 'ajaxify_comments',20, 2);
 
 ?>

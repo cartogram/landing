@@ -1,12 +1,13 @@
   /* Base Type Styles Using Modular Scale ---------------------- */
 
-  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,th,td {
+  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,th,td {
     margin:0;
     padding:0;
     font-size: ms(0);
+    direction: $textDirection;
   }
 
-  p { font-family: $bodyFontFamily; font-weight: $bodyFontWeight; font-size: ms(0); line-height: 1.6; margin-bottom: ms(1);
+  p { font-family: inherit; font-weight: $bodyFontWeight; font-size: ms(0); line-height: 1.6; margin-bottom: ms(1);
     &.lead { font-size: ms(0) * 1.25; line-height: 1.6; margin-bottom: ms(1); }
   }
   aside p { font-size: ms(0) - 1; line-height: 1.35; font-style: italic; }
@@ -14,6 +15,8 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: $headerFontFamily;
     font-weight: $headerFontWeight;
+    font-style: $headerFontStyle;
+    color: $headerFontColor;
     text-rendering: optimizeLegibility;
     line-height: 1.1;
     margin-bottom: ms(0);
@@ -38,12 +41,12 @@
   code { font-weight: bold; background: $highlightColor; }
 
   /* Lists ---------------------- */
-  ul, ol { font-size: ms(0); line-height: 1.6; margin-bottom: ms(1); list-style-position: inside; }
+  ul, ol, dl { font-size: ms(0); line-height: 1.6; margin-bottom: ms(1); list-style-position: outside; }
   ul {
     li {
-      ul, ol { margin-left: 20px; margin-bottom: 0; }
+      ul, ol { margin-#{$defaultFloat}: 20px; margin-bottom: 0; }
     }
-    &.square, &.circle, &.disc { margin-left: ms(1); }
+    &.square, &.circle, &.disc { margin-#{$defaultFloat}: ms(1); }
     &.square { list-style-type: square;
       li ul { list-style: inherit; }
     }
@@ -56,15 +59,15 @@
     &.no-bullet { list-style: none; }
     &.large li { line-height: 21px; }
   }
-  ol {
+  ol { margin-#{$defaultFloat}: 20px;
     li {
-      ul, ol { margin-left: 20px; margin-bottom: 0; }
+      ul, ol { margin-#{$defaultFloat}: 20px; margin-bottom: 0; }
     }
   }
 
   /* Blockquotes ---------------------- */
   blockquote, blockquote p { line-height: 1.5; color: lighten($headerFontColor, 30%); }
-  blockquote { margin: 0 0 ms(1); padding: 9px 20px 0 19px; border-left: 1px solid #ddd;
+  blockquote { margin: 0 0 ms(1); padding: 9px 20px 0 19px; border-#{$defaultFloat}: 1px solid #ddd;
     cite { display: block; font-size: ms(0) - 1; color: lighten($headerFontColor, 20%);
       &:before { content: "\2014 \0020"; }
       a, a:visited { color: lighten($headerFontColor, 20%); }
@@ -96,4 +99,6 @@
     h2, h3 { page-break-after: avoid; }
     .hide-on-print { display: none !important; }
     .print-only { display: block !important; }
+    .hide-for-print { display: none !important; }
+    .show-for-print { display: inherit !important; }
   }

@@ -1,0 +1,100 @@
+ 
+.isotope {
+  margin:0;
+  & > .isotope-item {
+      margin:0 15px 24px 0;
+    }
+}
+.isotope-item {
+  display:block;
+  width:308px;
+  margin-right:15px;
+  list-style:none;
+  @include box-shadow(0px 0px 3px rgba(0,0,0,0.1));
+  background:white;
+  article {
+    @include box-shadow(inset 0px 0px 1px rgba(0,0,0,0.3));
+    /* @include border-radius(5px); */
+    overflow:hidden;
+  }
+  .tax {
+    h3 {
+      padding:12px 15px 12px;
+      color:$mainColor;
+      font-weight:bold;
+      margin:0;
+    }
+  }
+  .entry {
+    padding:12px 15px 0px;
+    .meta-row {
+     padding-top:0px;
+    }
+  }
+  h3 {
+    font-size:ms(0);
+    margin-top:5px;
+  }
+  h4 small {
+    color:darken($white, 25%);
+    font-size:ms(1)
+  }
+  p {
+  }
+
+}
+
+.thumb {
+  display: block;
+  max-height: 185px;
+  overflow: hidden;
+}
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+      -ms-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}

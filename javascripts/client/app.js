@@ -1,8 +1,18 @@
-(function ($) {  
+jQuery(document).ready(function($) {
+//code here
 
-  $(function(){
-    /* Isotope Browser Check  */
 
+  
+  /* ========================================================================================================================
+  
+  Isotope Animations
+  
+  ======================================================================================================================== */
+
+  /**
+   * Animation Engine
+   *
+   */
   function isotopeAnimationEngine(){
     if(jQuery.browser.mozilla || jQuery.browser.msie){
       return "jquery";
@@ -11,30 +21,38 @@
     }
   }
 
-  /* Filtering */
-
+  /**
+   * Project Filtering
+   *
+   */
   function projectFilterInit() {
-    $('#filterNav a').click(function(){
-      var selector = $(this).attr('data-filter');  
+    $('.isotope-item').hide();
+    $('.nav-filter a').click(function(){
+      var selector = $(this).attr('data-filter');
       $('.isotope').isotope({
-        filter: selector,     
+        filter: selector,
         hiddenStyle : {
             opacity: 0,
             scale : 1
-        }     
+        }
       });
     
       if ( !$(this).parent().hasClass('active') ) {
-        $(this).parents('#filterNav').find('.active').removeClass('active');
+        $(this).parents('.nav-filter').find('.active').removeClass('active');
         $(this).parent().addClass('active');
       }
     
       return false;
-    }); 
+    });
   }
+  
   projectFilterInit();
-  $('.isotope-item').hide();
+  
 
+  /**
+   * Load Images before calling isotope so that we get the right dimensions.
+   *
+   */
   var $container = $('.isotope');
 
   $container.imagesLoaded( function(){
@@ -45,35 +63,29 @@
       animationEngine: isotopeAnimationEngine()
     });
   });
-  /* Slider */
-  $('.flexslider-thumbnails').flexslider({
-      animation: "slide",
-      namespace: "cartogram-slider-",
-   //   controlNav: "thumbnails",
-      directionNav: false,
-      pauseOnHover: true,
-      slideshowSpeed: 5000
-    });
-   $('.flexslider').flexslider({
-      animation: "slide",
-      namespace: "cartogram-slider-",
-      directionNav: false,
-      pauseOnHover: true,
-      slideshowSpeed: 5000
-    });
 
-  /* Accordion Nav */
-   $('#nav-database > li > a').click(function(){
-    if ($(this).attr('class') != 'active'){
-      $('#nav-database li ul').slideUp();
-      $(this).next().slideToggle();
-      $('#nav-database li a').removeClass('active');
-      $(this).addClass('active');
-    }
-    return false;
-  });
+
+  /* ========================================================================================================================
   
-  });
+  Flexslider Functions
   
-})(jQuery);
+  ======================================================================================================================== */
+
+   
+ $('.flexslider').flexslider({
+    animation: "slide",
+    namespace: "cartogram-slider-",
+    directionNav: true,
+    controlNav: true,
+    slideshow: false,
+    pauseOnHover: true,
+    slideshowSpeed: 5000,
+    animationLoop: false,
+    itemWidth: 308,
+    itemMargin: 15,
+    minItems: 1,
+    maxItems: 3
+  });
+
+});
 
