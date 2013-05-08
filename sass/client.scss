@@ -1,22 +1,5 @@
-@import "compass/css3";
-
-@import "modular-scale";
-
-@import "client/functions/all";
-
-@import "client/settings";
-
-@import "client/mixins/all";
-
-@import "client/common/base";
-
-@import "client/components/grid", "client/components/modules/all";
-
-@import "client/components/modules/mqueries";
-
-@import "client/thumbnails";
-
-@import "client/flexslider";
-
-@import "client/fonts/font";
-
+// Client Components
+@import
+  "client/font-declaration",
+  "client/font-classes",
+  "client/screen";
