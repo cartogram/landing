@@ -129,6 +129,19 @@
 		 **/	
 		//remove_filter('term_description','wpautop');	
 
+	/**
+	 * Theme Parts
+	 *
+	 **/
+	add_action('wp_footer','cartogram_footer');
+	add_action('wp_header','cartogram_header');
+	
+	/**
+	 * Admin
+	 *
+	 **/
+	add_action( 'admin_menu', 'cartogram_admin_menu' ); 
+	add_action( 'init', 'cartogram_admin_assets' );	
 
 	/**
 	 * Gravity Forms
