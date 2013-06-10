@@ -7,14 +7,11 @@
 
 	require_once( 'external/custom_post_types_taxonomies.php' );
 	require_once( 'external/media.php' );
-	require_once( 'external/multiple_featured_images.php' );
 	require_once( 'external/widgets.php' );
 	require_once( 'external/navigation.php' );
 	require_once( 'external/utilities.php' );
-	require_once( 'external/metaboxes.php' );
-	require_once( 'external/comments.php' );
-	require_once( 'external/theme_options.php' );
 	require_once( 'external/gravity_forms.php' );
+	require_once( 'external/comments.php' );
 
 	/* ========================================================================================================================
 	
@@ -23,9 +20,9 @@
 	======================================================================================================================== */
 
 	register_nav_menus( array(
-		'top' => 'Top Navigation Menu',
 		'main' => 'Main Navigation Menu',
 		'footer' => 'Footer Navigation Menu',
+
 	) );
 
 	/* ========================================================================================================================
@@ -39,16 +36,16 @@
 	 *
 	 */
 	function cartogram_scripts() {
-        wp_deregister_script('jquery');
-        wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js');
-	    wp_enqueue_script( 'jquery' );
+		wp_deregister_script('jquery');
 
-
-		wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/modernizr.cartogram.js', NULL, NULL, NULL);
+		wp_register_script( 'modernizr', get_template_directory_uri().'/javascripts/modernizr.cartogram.js', NULL , NULL, NULL );
 		wp_enqueue_script( 'modernizr' );
 
-		wp_register_script( 'app', get_template_directory_uri().'/javascripts/index-ck.js', array('jquery') );
-		wp_enqueue_script( 'app', array('jquery')  );
+		wp_register_script( 'app', get_template_directory_uri().'/javascripts/cartogram.min.js', false,  false, true);
+		wp_enqueue_script( 'app' );
+
+		wp_register_style( 'normalize', get_template_directory_uri().'/stylesheets/normalize.css', '', '', 'screen' );
+        wp_enqueue_style( 'normalize' );
 
 		wp_register_style( 'screen', get_template_directory_uri().'/stylesheets/app.css', '', '', 'screen' );
         wp_enqueue_style( 'screen' );
@@ -63,23 +60,8 @@
 	======================================================================================================================== */
 
 	add_theme_support('post-thumbnails');
-
-	set_post_thumbnail_size(100, 100, true);
-
-	add_image_size('cartogram_post_thumb_big',470, 9000, false);
-	add_image_size('cartogram_post_thumb_big_cropped',470, 340, true);
-
-	add_image_size('cartogram_post_thumb_small', 310, 180, true);
-	add_image_size('cartogram_post_thumb_tiny', 220, 140, true);
-	add_image_size('cartogram_slideshow_image_full', 1000, 444, true);
-
-	new MultiPostThumbnails(array(
-		'label' => 'Slideshow Image',
-		'id' => 'slideshow_image',
-		'post_type' => 'products'
-		)
-	);
-
+	add_image_size('cartogram_post_thumb_big',800, 500, true);
+	
 	/* ========================================================================================================================
 	
 	Call Everthing!
@@ -112,7 +94,6 @@
 	 *
 	 **/
 	add_filter('the_excerpt', 'excerpt_ellipsis');
-	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	add_filter('the_content', 'cartogram_remove_more_link');
 	add_action('the_content', 'add_video_containers');
 		/**
@@ -133,15 +114,11 @@
 	 * Theme Parts
 	 *
 	 **/
-	add_action('wp_footer','cartogram_footer');
-	add_action('wp_header','cartogram_header');
 	
 	/**
 	 * Admin
 	 *
 	 **/
-	add_action( 'admin_menu', 'cartogram_admin_menu' ); 
-	add_action( 'init', 'cartogram_admin_assets' );	
 
 	/**
 	 * Gravity Forms
@@ -153,6 +130,5 @@
 	 * Comments
 	 *
 	 **/
-	add_action('comment_post', 'ajaxify_comments',20, 2);
 
 ?>

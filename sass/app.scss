@@ -1,49 +1,54 @@
-// Make sure the charset is set appropriately
-@charset "UTF-8";
+@import "compass/css3";
 
-// This includes all of the foundation global elements that are needed to work with any of the other files.
-@import "foundation/variables";
+@import "variables-foundation";
 
-//Client Variables and Foundation overides
-@import "client/globals";
+@import "globals-custom";
 
-// Foundation Components
 @import
-  "foundation/components/global",
-  "foundation/components/grid",
-  "foundation/components/visibility",
-  "foundation/components/block-grid",
-  "foundation/components/type",
-  "foundation/components/buttons",
-  "foundation/components/forms",
-  "foundation/components/custom-forms",
-  "foundation/components/button-groups",
-  "foundation/components/dropdown-buttons",
-  "foundation/components/split-buttons",
-  "foundation/components/flex-video",
-  "foundation/components/section",
-  "foundation/components/top-bar",
-  "foundation/components/orbit",
-  "foundation/components/reveal",
-  "foundation/components/joyride",
-  "foundation/components/clearing",
-  "foundation/components/alert-boxes",
-  "foundation/components/breadcrumbs",
-  "foundation/components/keystrokes",
-  "foundation/components/labels",
-  "foundation/components/inline-lists",
-  "foundation/components/pagination",
-  "foundation/components/panels",
-  "foundation/components/pricing-tables",
-  "foundation/components/progress-bars",
-  "foundation/components/side-nav",
-  "foundation/components/sub-nav",
-  "foundation/components/switch",
-  "foundation/components/magellan",
-  "foundation/components/tables",
-  "foundation/components/thumbs",
-  "foundation/components/tooltips",
-  "foundation/components/dropdown";
+  "../components/foundation/components/global",
+  "../components/foundation/components/grid",
+  "../components/foundation/components/visibility",
+  "../components/foundation/components/block-grid",
+  "../components/foundation/components/type",
+  "../components/foundation/components/buttons",
+  "../components/foundation/components/forms",
+  "../components/foundation/components/custom-forms",
+  "../components/foundation/components/button-groups",
+  "../components/foundation/components/dropdown-buttons",
+  "../components/foundation/components/split-buttons",
+  "../components/foundation/components/flex-video",
+  "../components/foundation/components/section",
+  "../components/foundation/components/top-bar",
+  "../components/foundation/components/orbit",
+  "../components/foundation/components/reveal",
+  "../components/foundation/components/joyride",
+  "../components/foundation/components/clearing",
+  "../components/foundation/components/alert-boxes",
+  "../components/foundation/components/breadcrumbs",
+  "../components/foundation/components/keystrokes",
+  "../components/foundation/components/labels",
+  "../components/foundation/components/inline-lists",
+  "../components/foundation/components/pagination",
+  "../components/foundation/components/panels",
+  "../components/foundation/components/pricing-tables",
+  "../components/foundation/components/progress-bars",
+  "../components/foundation/components/side-nav",
+  "../components/foundation/components/sub-nav",
+  "../components/foundation/components/switch",
+  "../components/foundation/components/magellan",
+  "../components/foundation/components/tables",
+  "../components/foundation/components/thumbs",
+  "../components/foundation/components/tooltips",
+  "../components/foundation/components/dropdown";
 
-//main Client Styles
-@import "client";
+@import
+  "custom/font-classes",
+  "custom/font-declaration",
+  "custom/screen",
+  "custom/helpers",
+
+  "custom/type",
+  "custom/forms",
+
+  "custom/header",
+  "custom/footer";
