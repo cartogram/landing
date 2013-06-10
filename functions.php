@@ -7,7 +7,6 @@
 
 	require_once( 'external/custom_post_types_taxonomies.php' );
 	require_once( 'external/media.php' );
-	require_once( 'external/widgets.php' );
 	require_once( 'external/navigation.php' );
 	require_once( 'external/utilities.php' );
 	require_once( 'external/gravity_forms.php' );
@@ -27,6 +26,23 @@
 
 	/* ========================================================================================================================
 	
+	Define Widgetized Areas
+	
+	======================================================================================================================== */
+
+	register_sidebar(array(
+		'name' => 'Sidebar',
+		'id' => 'sidebar',
+		'description' => __('This is the default widget area for the sidebar. This will be displayed if the other sidebars have not been populated with widgets.', 'cartogram'),
+		'before_widget' => '<div id="%1$s" class="widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+
+
+	/* ========================================================================================================================
+	
 	Scripts
 	
 	======================================================================================================================== */
@@ -41,7 +57,7 @@
 		wp_register_script( 'modernizr', get_template_directory_uri().'/javascripts/modernizr.cartogram.js', NULL , NULL, NULL );
 		wp_enqueue_script( 'modernizr' );
 
-		wp_register_script( 'app', get_template_directory_uri().'/javascripts/cartogram.min.js', false,  false, true);
+		wp_register_script( 'app', get_template_directory_uri().'/javascripts/cartogram.min.js', false, false, true);
 		wp_enqueue_script( 'app' );
 
 		wp_register_style( 'normalize', get_template_directory_uri().'/stylesheets/normalize.css', '', '', 'screen' );
@@ -130,5 +146,14 @@
 	 * Comments
 	 *
 	 **/
+
+
+	/* ========================================================================================================================
+	
+	Custom Stuff
+	
+	======================================================================================================================== */
+
+	//add_theme_support( 'woocommerce' );
 
 ?>
