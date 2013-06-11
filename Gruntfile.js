@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 				tasks: ['jshint:gruntfile'],
 			},
 			css: {
-				files: ['sass/*.scss'],
+				files: ['sass/**/*.scss'],
 				tasks: 'compass'
 			},
 			javascript: {
