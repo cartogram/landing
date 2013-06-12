@@ -20,28 +20,29 @@ Landing is a wordpress theme framework created for internal use at [Cartogram](h
 
 ## Directory Layout
 
-	external/					--> external functions.php components
+	external/						--> external functions.php components
 	
-	parts/						--> template parts that are not within wordpress template heirarchy
-		shared/					--> always shared parts, html-header and html-footer
-			html-footer.php 	--> everything after the document footer hooks, scripts, etc...
-			html-header.php 	--> everthing before the body tag, header hooks, meta tags, etc...
-		loop.php 				--> basic extendible loop tempalte
+	parts/							--> template parts that are not within wordpress template heirarchy
+		shared/						--> always shared parts, html-header and html-footer
+			html-footer.php 		--> everything after the document footer hooks, scripts, etc...
+			html-header.php 		--> everthing before the body tag, header hooks, meta tags, etc...
+		loop.php 					--> basic extendible loop tempalte
 	
 	sass
-		<%= pkg.name %> 		--> everything sass, imports foundation
-		variables				--> a direct copy of foundations variables with package overrides
-		globals					--> all package specific variables
+		<%= pkg.name %> 			--> everything sass, imports foundation
+		variables-foundation.scss	--> a direct copy of foundations variables with package overrides
+		variables-custom.scss	--> all package specific variables
 
 	images
 	
 	javascripts
 		modernizer.js
-		app.js 					--> Single doc ready js
-		vendor					--> all our vendor stuff that is not a bower componene
+		app.js 						--> Single doc ready js
+		vendor						--> all our vendor stuff that is not a bower componene
 	
-	stylesheets					--> font-end loaded stylesheets
-		<%= pkg.name %>.css		--> everything css
-		normalize.css			--> normalize css (maybe)
+	stylesheets						--> font-end loaded stylesheets
+		<%= pkg.name %>.css			--> everything css
+		normalize.css				--> normalize css (maybe)
 
-	fonts						--> webfonts
+	resources
+		fonts						--> webfont files
