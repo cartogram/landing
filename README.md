@@ -48,6 +48,8 @@ Landing is a wordpress theme framework created for internal use at [Cartogram](h
 	resources
 		fonts						--> webfont files
 
+	dbupdate.php 					--> Updates WordPress's wp_options table's home and site url with the path to itself
+
 
 
 

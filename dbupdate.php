@@ -1,4 +1,14 @@
 <?php
+
+    /*
+        When run, this file updates WP's wp_options table's site and home url with the path to the file. This was created to replace the tedious steps of logging into phpmyadmin and editing the two lines each time a developer clones a live website and imports an existing database.
+
+        Usage:
+
+            1) Drag this file until the root directory of the WordPress project.
+            2) Edit lines 14-16 with the respective information as per wp-config.
+            3) Open the file in a browser.
+    */
     
     //Database connection information as per wp-config.
     $DB_NAME = "databasename";
