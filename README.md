@@ -29,16 +29,17 @@ Landing is a wordpress theme framework created for internal use at [Cartogram](h
 		loop.php 					--> basic extendible loop tempalte
 	
 	sass
-		<%= pkg.name %> 			--> everything sass, imports foundation
+		custom 						--> everything sass, imports foundation
+		vendor						--> third party/ vendor stuff
 		variables-foundation.scss	--> a direct copy of foundations variables with package overrides
-		variables-custom.scss	--> all package specific variables
+		variables-custom.scss		--> all package specific variables
 
 	images
 	
 	javascripts
 		modernizer.js
 		app.js 						--> Single doc ready js
-		vendor						--> all our vendor stuff that is not a bower componene
+		vendor						--> all our vendor stuff that is not a bower componenents
 	
 	stylesheets						--> font-end loaded stylesheets
 		<%= pkg.name %>.css			--> everything css
@@ -46,3 +47,8 @@ Landing is a wordpress theme framework created for internal use at [Cartogram](h
 
 	resources
 		fonts						--> webfont files
+
+
+
+
+		
